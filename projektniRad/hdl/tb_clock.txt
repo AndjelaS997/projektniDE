@@ -1,0 +1,97 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity tb_clock is
+end tb_clock;
+
+architecture Behavioral of tb_clock is
+
+    -- komponenta koju testiram
+    component clock
+        port(
+            CLK         : in std_logic;                        
+            RESET       : in std_logic;                       
+            SET_TIME    : in std_logic;                         
+            SET_SECONDS : in std_logic_vector(3 downto 0);     
+            SET_MINUTES : in std_logic_vector(3 downto 0);     
+            SECONDS     : out std_logic_vector(3 downto 0);    
+            MINUTES     : out std_logic_vector(3 downto 0)     
+        );
+    end component;
+
+    -- Signali koji poveyuju  komponente i tb
+    signal clk_tb        : std_logic := '0';                    
+    signal reset_tb      : std_logic := '0';                    
+    signal set_time_tb   : std_logic := '0';                    
+    signal set_seconds_tb: std_logic_vector(3 downto 0) := "0000";  
+    signal set_minutes_tb: std_logic_vector(3 downto 0) := "0000"; 
+    signal seconds_tb    : std_logic_vector(3 downto 0);       
+    signal minutes_tb    : std_logic_vector(3 downto 0);        
+    -- parametri za vrijeme simulacije
+    constant clk_period  : time := 10 ns;
+
+begin
+--povezivanje signala sa tb entitetom
+    uut: clock
+        port map(
+            CLK => clk_tb,
+            RESET => reset_tb,
+            SET_TIME => set_time_tb,
+            SET_SECONDS => set_seconds_tb,
+            SET_MINUTES => set_minutes_tb,
+            SECONDS => seconds_tb,
+            MINUTES => minutes_tb
+        );
+
+    -- proces za generisanje
+    clk_process: process
+    begin
+        while true loop
+            clk_tb <= '0';
+            wait for clk_period/2;
+            clk_tb <= '1';
+            wait for clk_period/2;
+        end loop;
+    end process;
+
+    -- glavni test proces
+    test_process: process
+    begin
+        -- Почетни услови
+        reset_tb <= '0';
+        set_time_tb <= '0';
+        set_seconds_tb <= "0000"; -- poctna vr. sek
+        set_minutes_tb <= "0000"; -- pocetna vri. za min
+        wait for  100us;
+
+        -- 1. test reset
+        reset_tb <= '1'; -- aktiviranje reset signaal
+        wait for 20 ns;
+        reset_tb <= '0'; -- deaktiviranje
+        wait for 40 ns;
+
+        -- 2. testiranje podesavanje veremena(12 sek, 5 min)
+        set_time_tb <= '1'; -- aktiviranje signala za podesavanje
+        set_seconds_tb <= "1100"; -- postavljanje 12 sek.
+        set_minutes_tb <= "0101"; -- postavljanje 5 min.
+        wait for 20 ns;
+        set_time_tb <= '0'; --deaktiviranj sig. za podesavanje
+        wait for 50 ns; 
+
+        -- 3. testiranje brojanja
+        wait for 500 ns;
+
+        -- 4. ponovno postavljanje na drugo vrijeme(7 sec, 3 min)
+        set_time_tb <= '1'; 
+        set_seconds_tb <= "0111"; 
+        set_minutes_tb <= "0011"; 
+        wait for 20 ns;
+        set_time_tb <= '0';
+        wait for 500 ns; 
+
+      
+        wait;
+    end process;
+end Behavioral;

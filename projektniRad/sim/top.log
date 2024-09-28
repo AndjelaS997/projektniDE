@@ -1,0 +1,24 @@
+# vsim tb_clock -t 1ps -displaymsgmode both -debugDB -lib work -do "onbreak {resume};  log /* -r;  add wave -position end  sim:/tb_clock/*; 
+#     run -all; quit" -wlf top.wlf -l top.log 
+# Start time: 15:51:00 on Sep 28,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.my_package
+# Loading work.tb_clock(sim)
+# Loading work.clock(behavioral)
+# Loading work.counter_74s163(behavioral)
+# ** Note: (vsim-8716) Reusing existing debug database vsim.dbg.
+# onbreak {resume}
+#   log /* -r
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: top.wlf
+#           File in use by: Sasa  Hostname: DESKTOP-MDDUIHE  ProcessID: 21256
+#           Attempting to use alternate WLF file "./wlfti1s2dk".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: top.wlf
+#           Using alternate file: ./wlfti1s2dk
+#   add wave -position end  sim:/tb_clock/*
+#  
+#     run -all

@@ -1,0 +1,174 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Sasa/Desktop/projektniRad/sim
+Eclock
+Z1 w1727530221
+Z2 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z3 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z4 DPx4 work 10 my_package 0 22 5hSmlAW13RD:kQOK1`=JM3
+Z5 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z6 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z7 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 2
+R0
+Z8 8../hdl/clock.vhd
+Z9 F../hdl/clock.vhd
+l0
+L6 1
+VWa;HJ2FAiI3M7GoBhn1a42
+!s100 f[Izhl]e1Nb820j4k7fKF1
+Z10 OV;C;2020.1;71
+32
+Z11 !s110 1727531460
+!i10b 1
+Z12 !s108 1727531459.000000
+Z13 !s90 -reportprogress|300|-2002|+acc|../hdl/clock.vhd|
+Z14 !s107 ../hdl/clock.vhd|
+!i113 1
+Z15 o-2002 +acc
+Z16 tExplicit 1 NoCoverage 1 CvgOpt 0
+Abehavioral
+R2
+R3
+R4
+R5
+R6
+R7
+Z17 DEx4 work 5 clock 0 22 Wa;HJ2FAiI3M7GoBhn1a42
+!i122 2
+l29
+L20 148
+Vbz0M5EW5I[@WkKQ[3:@Z^0
+!s100 b65`;Rka8N0e<L[b450Nf3
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Ecounter_74s163
+Z18 w1727473710
+R5
+R6
+R7
+!i122 0
+R0
+Z19 8../hdl/counter_74S163.vhd
+Z20 F../hdl/counter_74S163.vhd
+l0
+L5 1
+V73RchmPHD6Y4eFJ;3cPC;2
+!s100 Ld@c]Q_3X98PS:ZS5[A3n1
+R10
+32
+Z21 !s110 1727531458
+!i10b 1
+Z22 !s108 1727531458.000000
+Z23 !s90 -reportprogress|300|-2002|+acc|../hdl/counter_74S163.vhd|
+Z24 !s107 ../hdl/counter_74S163.vhd|
+!i113 1
+R15
+R16
+Abehavioral
+R5
+R6
+R7
+DEx4 work 14 counter_74s163 0 22 73RchmPHD6Y4eFJ;3cPC;2
+!i122 0
+l19
+L17 19
+Vl2MYHjOd6lH6VGAMKBAk>1
+!s100 FR7>c:Te5_IN^=2G<oKES2
+R10
+32
+R21
+!i10b 1
+R22
+R23
+R24
+!i113 1
+R15
+R16
+Pmy_package
+R2
+R3
+R6
+R7
+!i122 1
+w1727422238
+R0
+8../hdl/my_package.vhd
+F../hdl/my_package.vhd
+l0
+L5 1
+V5hSmlAW13RD:kQOK1`=JM3
+!s100 H?gjS5XlMMlCh=HD>MY=j1
+R10
+32
+!s110 1727531459
+!i10b 1
+R12
+!s90 -reportprogress|300|-2002|+acc|../hdl/my_package.vhd|
+!s107 ../hdl/my_package.vhd|
+!i113 1
+R15
+R16
+Etb_clock
+Z25 w1727530728
+R5
+R6
+R7
+!i122 3
+R0
+Z26 8../hdl/tb_clock.vhd
+Z27 F../hdl/tb_clock.vhd
+l0
+L5 1
+Va>7CgdnCJ_PK=:@:?d<^T2
+!s100 `7JFUf55hGbcHhzJ]^g`42
+R10
+32
+R11
+!i10b 1
+Z28 !s108 1727531460.000000
+Z29 !s90 -reportprogress|300|-2002|+acc|../hdl/tb_clock.vhd|
+!s107 ../hdl/tb_clock.vhd|
+!i113 1
+R15
+R16
+Asim
+R2
+R3
+R4
+R17
+R5
+R6
+R7
+DEx4 work 8 tb_clock 0 22 a>7CgdnCJ_PK=:@:?d<^T2
+!i122 3
+l22
+L8 73
+VF5^QPj`6C><0]_2]Sb9EE2
+!s100 1Rh]3`Yf^YZzDJCYk4JQH1
+R10
+32
+R11
+!i10b 1
+R28
+R29
+Z30 !s107 ../hdl/tb_clock.vhd|
+!i113 1
+R15
+R16
